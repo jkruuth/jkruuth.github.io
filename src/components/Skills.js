@@ -1,7 +1,7 @@
 const Skills = ({notes}) => (
     <div>
       <h1>Skillset</h1>
-      <p>Most of the skills I have gained from my studies and some by trying something new on my own.</p>
+      <p>I have gained most of my skills through my studies and some by trying new things on my own.</p>
       <p>Listed below is a stack of my skillset</p>
       <div>
         <div className="stack_content">
