@@ -1,63 +1,142 @@
-import React, {  } from 'react'
-import About from './components/About'
-import Skills from './components/Skills'
-import Education from './components/Education'
-import "./App.css"
-import { Navbar, Nav} from 'react-bootstrap'
+import React, { useState } from "react";
+import Me from "./images/updatedMe.jpg";
 
-import {
-  Switch,
-  Route,
-  Link,
-} from "react-router-dom"
-import Footer from './components/Footer'
-import Infobox from './components/Infobox'
+const PortfolioPage = () => {
+  const [activeTab, setActiveTab] = useState("About");
 
-const App = () => {
+  const handleTabClick = (tabName) => {
+    setActiveTab(tabName);
+  };
 
-  const padding = {
-    padding: 5
-  }
+  const renderTabContent = () => {
+    switch (activeTab) {
+      case "About":
+        return (
+          <div>
+            <h2>About Me</h2>
+            <p>
+              I am Computer Science student from University of Jyväskylä. I'm
+              eager to learn new and motivated to develop my skills in area of
+              software development.
+            </p>
+          </div>
+        );
+      case "Skills":
+        return (
+          <div>
+            <h2>Skills</h2>
+            <ul>
+              <li>JavaScript</li>
+              <li>React</li>
+              <li>Node.js</li>
+              <li>HTML/CSS</li>
+              <li>SQL</li>
+            </ul>
+          </div>
+        );
+      case "Education":
+        return (
+          <div>
+            <h2>Education</h2>
+            <ul>
+              <li>Bachelor of Science in Computer Science, XYZ University</li>
+              <li>
+                Master of Science in Information Technology, ABC University
+              </li>
+            </ul>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
 
   return (
-    <div className="container">
-      <div className="content_wrapper">
-       <div className="left_side">
-        <Infobox />
+    <div
+      style={{
+        backgroundColor: "#1A2238",
+        color: "white",
+        padding: "20px",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <div style={{ flexGrow: 0, marginRight: 70, maxWidth: 300 }}>
+          <h1 style={{ color: "#50C878", marginBottom: "20px" }}>
+            My Portfolio
+          </h1>
+          <img
+            src={Me}
+            alt="Me"
+            style={{ width: "200px", height: "200px", borderRadius: "50%" }}
+          />
+        </div>
+        <div style={{ flexGrow: 0, flexBasis: 100 }}>
+          <div
+            style={{
+              marginBottom: "20px",
+              display: "flex",
+              flexDirection: "row",
+            }}
+          >
+            <button
+              style={{
+                backgroundColor: activeTab === "About" ? "#50C878" : "#4B4D69",
+                color: "white",
+                marginRight: "10px",
+              }}
+              onClick={() => handleTabClick("About")}
+            >
+              About
+            </button>
+            <button
+              style={{
+                backgroundColor: activeTab === "Skills" ? "#50C878" : "#4B4D69",
+                color: "white",
+                marginRight: "10px",
+              }}
+              onClick={() => handleTabClick("Skills")}
+            >
+              Skills
+            </button>
+            <button
+              style={{
+                backgroundColor:
+                  activeTab === "Education" ? "#50C878" : "#4B4D69",
+                color: "white",
+                marginRight: "10px",
+              }}
+              onClick={() => handleTabClick("Education")}
+            >
+              Education
+            </button>
+          </div>
+        </div>
       </div>
-      <div className="right_side">
-       <Navbar collapseOnSelect expand="xl" bg="" variant="dark">
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-         <Nav className="mr-auto">
-           <Nav.Link href="#" as="span">
-             <Link style={padding} to="/">About me</Link>
-           </Nav.Link>
-           <Nav.Link href="#" as="span">
-             <Link style={padding} to="/skills">Skillset</Link>
-           </Nav.Link>
-           <Nav.Link href="#" as="span">
-             <Link style={padding} to="/education">Education</Link>
-           </Nav.Link>
-         </Nav>
-        </Navbar.Collapse>
-        </Navbar>
-        <Switch>
-          <Route path="/skills">
-           <Skills className="skill_page"/>
-          </Route>
-          <Route path="/education">
-           <Education className="education_page" />
-          </Route>
-          <Route path="/">
-           <About className="about_page"/>
-          </Route>
-        </Switch>
-      </div>
-      </div>
-      <Footer />
-    </div>
-  )
-}
 
-export default App
+      {renderTabContent()}
+      <div
+        style={{
+          flex: 1,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          padding: "20px",
+        }}
+      >
+        <div style={{ marginTop: "20px", textAlign: "center" }}>
+          <a
+            href="https://github.com/my-github-profile"
+            style={{ color: "#50C878" }}
+          >
+            Github
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PortfolioPage;
