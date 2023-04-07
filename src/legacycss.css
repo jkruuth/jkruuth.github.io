@@ -61,6 +61,14 @@ footer {
     align-items: center;
 }
 
+.socialmediaButton {
+    
+    margin: 50px;
+    background-color: rgb(19, 33, 34);
+    color: rgb(132, 164, 167);
+    
+}
+
 .bi-github, .bi-linkedin, .bi-envelope {
     margin-right: 5px;
 }

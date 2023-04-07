@@ -6,3 +6,128 @@
     justify-content: center;
     align-items: center;
 }
+
+body {
+    background-color: #1A1E1F;
+    color: aliceblue;
+}
+
+.content_wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.img-fluid {
+    border-radius: 50%;
+    max-width: 80%;
+    height: auto;
+    margin: 10px
+}
+
+.navbar {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+}
+
+.left_side {
+    flex-grow: 0;
+    margin-right: 70px;
+    max-width: 300px;
+}
+
+.right_side {
+    flex-grow: 0;
+    flex-basis: 100%;
+    
+}
+
+footer {
+   flex-grow: 1;
+   border-top: 1px solid rgb(129, 115, 115);
+}
+
+.footer_content {
+    margin: 20px;
+}
+
+.button_wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-primary {
+    margin: 10px;
+    background-color: rgb(19, 33, 34);
+    color: rgb(132, 164, 167);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bi-github, .bi-linkedin, .bi-envelope {
+    margin-right: 5px;
+}
+
+.navbar {
+    border-bottom: 1px solid rgb(129, 115, 115);
+}
+
+.progress-bar {
+    background-color: #007bff;
+}
+
+.progress .progress-bar {
+    animation-name: animateBar;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 1.2s;
+}
+@keyframes animateBar {
+    0% {transform: translateX(-100%);}
+    100% {transform: translateX(0);}
+}
+.fa {
+    padding: 10px;
+    font-size: 100px;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+
+.fa-github {
+    background: black;
+    color: white;
+  }
+.stack_content {
+    margin-bottom: 25px;
+}
+
+.skill_title {
+    font-size: 1.5rem;
+}
+
+@media (max-width: 480px) {
+    .text {
+      font-size: 15px;
+    }
+
+    .content_wrapper {
+        flex-direction: column;
+    }
+
+    .navbar-dark .navbar-toggler {
+        margin-bottom: 10px;
+    }
+  }
