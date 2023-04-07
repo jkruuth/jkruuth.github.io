@@ -1,0 +1,8 @@
+.contentButton {
+    margin: 10px;
+    background-color: '#50C878';
+    color: rgb'#50C878';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
