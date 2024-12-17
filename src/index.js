@@ -5,7 +5,7 @@ import App from "./App";
 
 // Function to send event
 function sendSalesforceEvent() {
-  SalesforceInteractions.sendEvent({
+  window.SalesforceInteractions.sendEvent({
     user: {
       identities: {
         loyaltyId: "885627312393",
