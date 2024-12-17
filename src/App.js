@@ -26,11 +26,12 @@ const PortfolioPage = () => {
       }
     }
 
-    // Ensure the SDK is initialized before sending the event
-    window.c360a.push(["ready", sendSalesforceEvent]);
+    // // Ensure the SDK is initialized before sending the event
+    // window.c360a.push(["ready", sendSalesforceEvent]);
   }, []); // Empty dependency array ensures this runs only once when the component mounts
 
   const handleTabClick = (tabName) => {
+    sendSalesforceEvent();
     setActiveTab(tabName);
   };
 
