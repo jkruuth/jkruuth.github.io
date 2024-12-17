@@ -16,49 +16,6 @@
     </script>
     <!-- End Google Tag Manager -->
     <script src="https://cdn.c360a.salesforce.com/beacon/c360a/984659a8-e918-448b-ba63-7d77bbab7c50/scripts/c360a.min.js"></script>
-    <script>
-      SalesforceInteractions.init({
-        consents: [
-          {
-            purpose: "Tracking",
-            provider: "OneTrust",
-            status: "Opt In",
-          },
-        ],
-      });
-    </script>
-    <script>
-      SalesforceInteractions.setLoggingLevel(1);
-    </script>
-    <script>
-      SalesforceInteractions.sendEvent({
-        user: {
-          identities: {
-            loyaltyId: "885627312393",
-          },
-          attributes: {
-            firstName: "Joe",
-            lastName: "Smith",
-            email: "joe.smith@domain.com",
-            eventType: "Customer",
-          },
-        },
-      });
-    </script>
-    <script>
-      SalesforceInteractions.sendEvent({
-        interaction: {
-          name: "View Catalog Object",
-          catalogObject: {
-            type: "Product",
-            id: "65e4e737",
-            attributes: {
-              description: "Shoes",
-            },
-          },
-        },
-      });
-    </script>
     <meta charset="utf-8" />
     <link
       rel="stylesheet"
