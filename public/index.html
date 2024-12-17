@@ -3,6 +3,17 @@
   <head>
     <script src="https://cdn.c360a.salesforce.com/beacon/c360a/984659a8-e918-448b-ba63-7d77bbab7c50/scripts/c360a.min.js"></script>
     <script>
+      SalesforceInteractions.init({
+        consents: [
+          {
+            purpose: "Tracking",
+            provider: "OneTrust",
+            status: "Opt In",
+          },
+        ],
+      });
+    </script>
+    <script>
       SalesforceInteractions.sendEvent({
         user: {
           identities: {
@@ -12,6 +23,20 @@
             firstName: "Joe",
             lastName: "Smith",
             email: "joe.smith@domain.com",
+          },
+        },
+      });
+    </script>
+    <script>
+      SalesforceInteractions.sendEvent({
+        interaction: {
+          name: "View Catalog Object",
+          catalogObject: {
+            type: "Product",
+            id: "65e4e737",
+            attributes: {
+              description: "Shoes",
+            },
           },
         },
       });
