@@ -2,6 +2,20 @@
 <html lang="en">
   <head>
     <script src="https://cdn.c360a.salesforce.com/beacon/c360a/984659a8-e918-448b-ba63-7d77bbab7c50/scripts/c360a.min.js"></script>
+    <script>
+      SalesforceInteractions.sendEvent({
+        user: {
+          identities: {
+            loyaltyId: "885627312393",
+          },
+          attributes: {
+            firstName: "Joe",
+            lastName: "Smith",
+            email: "joe.smith@domain.com",
+          },
+        },
+      });
+    </script>
     <meta charset="utf-8" />
     <link
       rel="stylesheet"
